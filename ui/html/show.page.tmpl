@@ -1,0 +1,15 @@
+{{template "base" .}}
+{{define "title"}}User {{end}}
+{{define "main"}}
+    <div class='article'>
+        <div class='metadata'>
+            <strong>Page: </strong>
+            <span>User</span>
+        </div>
+        <div class='metadata'>
+            <p>Name: {{.User.Name}}</p>
+            <p>Email: {{.User.Email}}</p>
+            <p>Version: #{{.User.Version}}</p>
+        </div>
+    </div>
+{{end}}

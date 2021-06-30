@@ -1,0 +1,32 @@
+{{define "base"}}
+    <!doctype html>
+    <html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title>{{template "title" .}} - Articles' Hub</title>
+        <link rel='stylesheet' href='/static/css/main.css'>
+        <link rel="shortcut icon" href="/static/img/favicon.png" type="image/png">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    </head>
+    <body>
+    <header>
+        <h1><a href='/'>Articles' Hub<img style="width:50px;height:50px; transform: rotate(30deg); margin-bottom:-7px" src="/static/img/favicon.png"></a></h1>
+    </header>
+    <nav>
+        <div>
+            <a href='/'>Home</a>
+            <a href='/search'>Search</a>
+        </div>
+    </nav>
+    <main>
+        {{with .Flash}}
+            <div class='flash '>{{.}}</div>
+        {{end}}
+        {{template "main" .}}
+    </main>
+    {{template "footer" .}}
+    <script src="/static/js/main.js" type="text/javascript"></script>
+    </body>
+    </html>
+{{end}}
