@@ -3,11 +3,9 @@
 {{define "main"}}
     <div class='article'>
         <div class='metadata'>
-            <strong>Page: </strong>
-            <span>User</span>
+            <strong>User: {{.User.Name}}</strong>
         </div>
-        <div class='metadata'>
-            <p>Name: {{.User.Name}}</p>
+        <div>
             <p>Email: {{.User.Email}}</p>
             <p>Version: #{{.User.Version}}</p>
         </div>

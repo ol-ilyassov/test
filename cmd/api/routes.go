@@ -22,5 +22,9 @@ func (app *application) routes() http.Handler {
 
 	//return app.metrics(app.recoverPanic(app.enableCORS(app.rateLimit(app.authenticate(router)))))
 
+	fileServer := http.FileServer(http.Dir("./ui/static/"))
+	//router.Handle(http.MethodGet,"/static/", http.StripPrefix("/static", fileServer))
+	router.Handler(http.MethodGet, "/static/", http.StripPrefix("/static", fileServer))
+
 	return app.metrics(app.recoverPanic(app.enableCORS(app.rateLimit(router))))
 }

@@ -123,7 +123,7 @@ func main() {
 	}))
 
 	// Template Cache init
-	templateCache, err := newTemplateCache("ui/html/")
+	templateCache, err := newTemplateCache("./ui/html/")
 	if err != nil {
 		logger.PrintFatal(err, nil)
 	}
